@@ -5,15 +5,12 @@ const { exec } = require('child_process');
 const Table = require('cli-table');
 
 const args = process.argv.slice(2);
-if (args.length > 0) {
-    for (const file of args) {
-        runFile(file);
-    }
+if (args.length == 1) {
+    runFile(args[0]);
 }
 else {
     runFile(lastEditedFile('./solutions'));
 }
-
 
 function lastEditedFile(folderPath) {
     const files = fs.readdirSync(folderPath);
