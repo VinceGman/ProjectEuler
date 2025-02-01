@@ -25,7 +25,7 @@ function largestPrime(num)
     {
         if (num % i == 0)
         {
-            factors.push(num);
+            factors.push(i);
             return largestPrime(num / i);
         }
         i++;
